@@ -38,7 +38,7 @@ public class Util {
 			}
 			file.close();
 		} catch (IOException e) {
-			System.out.println("Error occurred while writing to: " + filepath);
+			System.out.println("Error occurred while reading: " + filepath);
 			System.out.println("Error Message: " + e.getMessage());
 		} finally {
 			if (fr != null) {

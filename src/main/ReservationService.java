@@ -27,14 +27,14 @@ public class ReservationService {
 	 */
 	public static void main(String[] args) {
 		ReservationService service = new ReservationService();
-		System.out.println("Please Enter the input in the format: --input={FILEPATH} --output={FILEPATH}");
+		System.out.println("Please Enter the input in the format: --input= {FILEPATH} --output= {FILEPATH}");
 		String inputFile = "";
 		String outputFile = "";
 		if (args.length == 2) {
 			if (args[0].trim().equals("--input=")) {
 				inputFile = args[1];
 			} else {
-				System.out.println("Wrong imput! Check your input again.");
+				System.out.println("Wrong input! Check your input again.");
 			}
 		} else if (args.length == 4) {
 			if (args[0].trim().equals("--input=") && args[2].trim().equals("--output=")) {
@@ -44,7 +44,9 @@ public class ReservationService {
 				System.out.println("Wrong imput! Check your input again.");
 			}
 		}
-		service.bookTickets(inputFile, outputFile);
+		String inputFilePath =  System.getProperty("user.dir") + "/src/test/files/" + inputFile;
+		String outputFilePath =  System.getProperty("user.dir") + "/src/test/files/" + outputFile;
+		service.bookTickets(inputFilePath, outputFilePath);
 	}
 
 	/**
@@ -53,7 +55,7 @@ public class ReservationService {
 	 * @param outputPath The path of the output file.
 	 */
 	public void bookTickets(String inputPath, String outputPath) {
-		reservationDataBase.initializeTheater(10,5);
+		reservationDataBase.initializeTheater(10,20);
 		List<String> input = Util.readFile(inputPath);
 		List<String> output = new ArrayList<String>();
 		for (String str : input) {
