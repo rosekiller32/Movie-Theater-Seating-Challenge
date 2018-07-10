@@ -21,4 +21,4 @@ The time complexity of the O(n) where the n is the number of the seats in the ro
 
 ## How to run in the console:
 
-java -cp seatChallenge.jar ReservationService  --input= {INPUTFILEPATH} --output= {OUTPUTFILEPATH}
+java -cp seatChallenge.jar main.ReservationService --input= input_test.txt --output= output_test.txt
